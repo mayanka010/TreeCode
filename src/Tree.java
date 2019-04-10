@@ -44,5 +44,29 @@ public class Tree {
         }
     }
 
+    public Tree getLeftSubTree()
+    {
+        if(root !=null && root.leftChild !=null)
+        {
+            return new Tree(root.leftChild);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Tree getRightSubTree()
+    {
+        if(root !=null && root.rightChild !=null)
+        {
+            return new Tree(root.rightChild);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 
 }
