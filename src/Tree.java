@@ -88,6 +88,30 @@ public class Tree {
         return false;
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        toString(root,1,sb);
+        return sb.toString();
+    }
 
-
+    private void toString(Node node, int depth, StringBuilder stringBuilder)
+    {
+        for(int i =1; i < depth;i++)
+        {
+            stringBuilder.append(" - - ");
+        }
+        if(node == null)
+        {
+            stringBuilder.append("null\n");
+        }
+        else
+        {
+            stringBuilder.append(node.toString());
+            stringBuilder.append("\n");
+            toString(node.leftChild, depth+1,stringBuilder);
+            toString(node.rightChild,depth+1,stringBuilder);
+        }
+    }
 }
